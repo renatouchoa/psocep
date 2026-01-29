@@ -561,6 +561,9 @@ const data = {
     "Rua 19": "77546-198"
   },
   "Nova Fronteira": {
+    "Rua Comercial 1": "77546-002",
+    "Rua Comercial 2": "77546-004",
+    "Rua Comercial 3": "77546-006",
     "Avenida Comercial 4": "77546-008",
     "Avenida José Cunha Araújo": "77546-070",
     "Avenida José Otávio": "77546-062",
