@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Consulta de CEP - Paraíso</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        body { background-color: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .card { border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .form-select, .form-control { border-radius: 10px; }
+        .btn-copy { border-radius: 0 10px 10px 0; }
+        .footer-renato { font-size: 0.9rem; color: #6c757d; margin-top: 2rem; }
+        </style>
+    </header>
+    <body>
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card p-4">
+                        <div class="text-center mb-4">
+                            <h3 class="fw-bold text-primary">Qual o meu CEP?</h3>
+                            <p class="text-muted">Encontre rapidamente um CEP de Paraíso do Tocantins </p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectBairro" class="form-label">Nome do Bairro</label>
+                            <select id="selectBairro" class="form-select form-select-lg">
+                                <option value="" selected disabled>Selecione um bairro...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectLogradouro" class="form-label">Logradouro</label>
+                            <select id="selectLogradouro" class="form-select form-select-lg" disabled>
+                                <option value="" selected disabled>Aguardando bairro...</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputCep" class="form-label">O meu novo CEP é</label>
+                            <div class="input-group input-group-lg">
+                                <input type="text" id="inputCep" class="form-control" placeholder="" readonly>
+                                <button class="btn btn-primary" type="button" id="btnCopiar" onclick="copiarCep()">
+                                Copiar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div id="feedback" class="text-success text-center small mt-2" style="display: none;">
+                            CEP copiado com sucesso!
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <div class="footer-renato mb-2">
+                        Desenvolvido por <strong>Renato Uchôa</strong>
+                    </div>
+                    
+                    <ul class="list-inline small text-muted">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-decoration-none text-secondary" data-bs-toggle="modal" data-bs-target="#modalSobre">Sobre</a>
+                        </li>
+                        <li class="list-inline-item text-secondary">•</li>
+                        <li class="list-inline-item">
+                            <a href="https://forms.gle/UbWJb52vhsyHR2Fb6" target="_blank" class="text-decoration-none text-secondary">Encontrou algum erro?</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalSobre" tabindex="-1" aria-labelledby="modalSobreLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-radius: 15px;">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalSobreLabel">Sobre o Projeto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-secondary" style="line-height: 1.6;">
+                        <p>
+                            Recentemente, os Correios alteraram o sistema de endereçamento de <strong>Paraíso do Tocantins</strong>, substituindo o CEP geral por códigos específicos para cada logradouro.
+                        </p>
+                        <p>
+                            Essa mudança gerou diversos desafios logísticos, erros de entrega e dúvidas entre os moradores. Diante deste cenário, este projeto surgiu como uma individual e sem fins lucrativos.
+                        </p>
+                        <p>
+                            O objetivo é oferecer uma ferramenta simples e rápida para auxiliar a comunidade a encontrar e copiar seus novos códigos postais, mitigando as frustrações causadas pela transição.
+                        </p>
+                        <hr />
+                        <p style="font-size: 0.85rem;">
+                            <strong>Renato Uchôa</strong> é desenvolvedor e, nas horas livres, gosta de contribuir com a comunidade, utilizando a tecnologia para criar ferramentas que tragam soluções práticas e facilitem o dia a dia das pessoas.
+                        </p>
+                        <hr />
+                        <div class="p-3 bg-light rounded" style="font-size: 0.85rem;">
+                            <p class="mb-0">
+                                <strong>Aviso importante:</strong> O desenvolvimento desta página utilizou como base os dados fornecidos oficialmente pelos Correios. O desenvolvedor não possui vínculo com a estatal e <strong>não se responsabiliza por eventuais inconsistências, erros de base ou dados desatualizados</strong> fornecidos pela empresa. Encontrou algum erro? <a href="https://forms.gle/UbWJb52vhsyHR2Fb6" target="_blank">Informe-o aqui</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <script src="script.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </html>
